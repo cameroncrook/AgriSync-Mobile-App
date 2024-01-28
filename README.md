@@ -4,9 +4,7 @@ This is an incomplete mobile app project. This is part of a larger project calle
 
 The purpose of this app is to help farmers and ranchers better record and document their production. Specifically it helps users to track their cattle and hay production. 
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the app running and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/uJFzdXeBVjQ?si=9i80RXe701-MvYsg)
 
 # Development Environment
 
