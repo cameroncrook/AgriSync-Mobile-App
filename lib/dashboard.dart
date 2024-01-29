@@ -30,6 +30,21 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <ElevatedButton>[
+            ElevatedButton.icon(
+              onPressed: null, 
+              icon: const Icon(Icons.list), 
+              label: const Text("Manage")
+            ),
+            ElevatedButton.icon(
+              onPressed: null, 
+              icon: const Icon(Icons.add), 
+              label: const Text("Add Task")
+            ),
+          ],
+        ),
         const Padding(
           padding: EdgeInsets.all(5.0),
           child: Text(

@@ -4,6 +4,7 @@ import 'hayInput.dart';
 import 'dashboard.dart';
 import 'agriculture.dart';
 import 'cattle.dart';
+import 'settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,15 +55,24 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text("AgriSync"),
           leading: IconButton(
-            icon: Icon(Icons.dashboard),
-            tooltip: 'Dashboard',
+            icon: const Icon(Icons.settings),
+            tooltip: 'Settings',
             onPressed: () {
               setState(() {
-                _currentBody = Dashboard();
+                _currentBody = Settings();
               });
             },
           ),
-          actions: <Widget>[
+          actions: <IconButton>[
+            IconButton(
+              icon: Icon(Icons.assignment),
+              tooltip: "Tasks",
+              onPressed: () {
+                setState(() {
+                  _currentBody = Dashboard();
+                });
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.agriculture, size: 30),
               tooltip: 'Feed Production',

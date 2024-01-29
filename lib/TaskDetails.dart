@@ -31,12 +31,17 @@ class _TaskDetailsState extends State<TaskDetails> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: getStatusColor(taskData["status"]),
-        actions: const <Widget>[
+        actions: const <IconButton>[
           IconButton(
             icon: Icon(Icons.edit, size: 30),
             tooltip: 'Edit details',
             onPressed: null,
           ),
+          IconButton(
+            icon: Icon(Icons.delete, size: 30),
+            tooltip: "Delete",
+            onPressed: null,
+          )
         ],
       ),
       body: Padding(
