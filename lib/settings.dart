@@ -23,17 +23,6 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
 
     // Big Deal options to display at the bottom (based off of user permissions in the farm)
-    List<ElevatedButton> adminOp = [
-      ElevatedButton(
-        onPressed: null, 
-        child: Text("Switch Farm"),
-      ),
-      ElevatedButton(
-        onPressed: null, 
-        child: Text("Add Farm")
-      ),
-    ];
-
     ElevatedButton? adminOption;
 
     if (settings['isOwner']) {
@@ -199,9 +188,7 @@ class _SettingsState extends State<Settings> {
                         Row(
                           children: [
                             Text(settings['collaborators_num']),
-                            Icon(
-                              Icons.person,
-                            ),
+                            const Icon(Icons.person),
                           ],
                         ),
                         const Text("Manage Collaborators")
@@ -211,6 +198,28 @@ class _SettingsState extends State<Settings> {
                 )
               ],
             ),
+            const Row(
+              children: <Widget>[
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: null, 
+                    child: Text("Switch Farm"),
+                  ),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: null, 
+                    child: Text("Add Farm")
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20,),
+            Row(
+              children: <Widget>[
+                Expanded(child: adminOption)
+              ],
+            )
           ],
         ),
       ),

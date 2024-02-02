@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/dashboard_widgets/ToDoTasks.dart';
+import 'api/task_endpoints.dart';
 
 class Dashboard extends StatelessWidget {
   final List<Map<String, dynamic>> tasks = [
@@ -55,8 +56,21 @@ class Dashboard extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(child: ToDoTasks(task: tasks)),
+        FutureBuilder(
+          future: getActiveTasks(), 
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            } else {
+              return Expanded(child: ToDoTasks(task: snapshot.data!));
+            }
+          }
+        ),
       ],
     );
   }
 }
+
+// Expanded(child: ToDoTasks(task: tasks)),
