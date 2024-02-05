@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'utilities/taskFunctions.dart';
+import '../../utilities/taskFunctions.dart';
 
 class TaskDetails extends StatefulWidget {
   final int taskId;
