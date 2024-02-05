@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'hayInput.dart';
+import 'widgets/agriculture_widgets/hayInput.dart';
 
 class Agriculture extends StatelessWidget {
   @override

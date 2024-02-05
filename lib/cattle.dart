@@ -1,25 +1,59 @@
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 
-class Cattle extends StatelessWidget {
+class Cattle extends StatefulWidget {
+  const Cattle();
+
+  @override
+  _CattleState createState() => _CattleState();
+}
+
+class _CattleState extends State<Cattle> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Home Page',
+      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Search Page',
+      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Profile Page',
+      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: ListView(
-        padding: EdgeInsets.zero,
-        children: const <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text('Drawer Header'),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(CommunityMaterialIcons.barn),
+            label: 'Herd'
           ),
-          ListTile(
-            title: Text('Statistics'),
-            onTap: null,
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart),
+            label: 'stats'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.build),
+            label: 'tools'
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
-      body: const Center(child: Text("Cattle"),),
+      body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
 }

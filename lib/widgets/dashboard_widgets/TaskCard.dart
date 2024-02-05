@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utilities/taskFunctions.dart';
-import '../../TaskDetails.dart';
+import 'TaskDetails.dart';
 
 // The individual general overview task card that gets displayed in the dashboard
 class TaskCard extends StatelessWidget {
