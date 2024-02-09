@@ -1,5 +1,6 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
+import 'widgets/cattle_widgets/Herd.dart';
 
 class Cattle extends StatefulWidget {
   const Cattle();
@@ -11,11 +12,8 @@ class Cattle extends StatefulWidget {
 class _CattleState extends State<Cattle> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home Page',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
+  final List<Widget> _widgetOptions = <Widget>[
+    Herd(),
     Text(
       'Search Page',
       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
@@ -43,11 +41,11 @@ class _CattleState extends State<Cattle> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart),
-            label: 'stats'
+            label: 'Stats'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.build),
-            label: 'tools'
+            label: 'Tools'
           ),
         ],
         currentIndex: _selectedIndex,
